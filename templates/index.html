@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Churn Prediction</title>
-   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
@@ -15,7 +15,7 @@
     <!-- Navbar Starts -->
     <section id="nav-bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">CSK</a>
+    <a class="navbar-brand font-weight-bold" href="#" style="color: yellow;">BANK</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -39,7 +39,6 @@
     </nav>
     </section>
     <!-- Navbar Ends -->
-    <div id="particles-js"></div>
     
     
         
@@ -87,7 +86,7 @@
 			</div>
 
 			<div class="form-group">
-			<p>Do the Customer have Credit Card? <span>*</span></p>
+			<p>Do the Customer have Credit Card? (1=Yes, 0=No) <span>*</span></p>
 			<span class="icon-case"><i class="fa fa-map-marker"></i></span>
 				<input name="HasCrCard" required="required">
                 <div class="validation"></div>
@@ -100,7 +99,7 @@
 	<div class="rightcontact">	
 
 			<div class="form-group">
-			<p>Is the Customer Active Member<span>*</span></p>
+			<p>Is the Customer Active Member (1=Yes, 0=No)<span>*</span></p>
 			<span class="icon-case"><i class="fa fa-building-o"></i></span>
 				<input name="IsActiveMember" required="required">
                 <div class="validation"></div>
@@ -137,7 +136,7 @@
 			
 	</div>
 	</div>
-<button  type="submit " class="btn btn-lg btn-info mb-5 ml-5">Predict whether the Customer will leave the bank or not?</button>
+<button  type="submit " class="btn btn-lg btn-info mb-5 ml-5" style="box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75); background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed);">Predict whether the Customer will leave the bank or not?</button>
 	
 </form>	
     
@@ -147,6 +146,27 @@
 
         <br><br><h3 class="alert alert-primary text-center" role="alert">{{ prediction_text }}<h3>
     </div>
+    <!-- Footer -->
+        <!-- Footer -->
+    <div class="unique-color-dark mt-4 white-text " style="background-color: #1c2331 !important;">
+      <div class="blue-gradient">
+        <div class="container">
+          <!-- Grid row-->
+          <div class="row py-3 d-flex align-items-center">
+            <!-- Grid column -->
+            <div
+              class="col-md-6 col-lg-5 text-center text-md-left"
+            >
+              <h6 class="mb-0 text-white">Developed by Manan Bedi   <a href="https://github.com/manan-bedi2908/Customer_Churn-Deployment"><i class="ml-5 fa fa-github fa-2x" aria-hidden="true"></i></a><a href="https://www.linkedin.com/in/manan-bedi-20a80a190/"><i class="ml-5 fa fa-linkedin fa-2x" aria-hidden="true"></i></a></h6>
+            </div>
+            <!-- Grid column -->
+
+            
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row-->
+        </div>
+      </div>
 
 
 
@@ -158,7 +178,7 @@
 }
 body {
     font-family: sans-serif;
-    background-image: url(https://images.unsplash.com/photo-1480506132288-68f7705954bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1393&q=80) !important;
+    background-image: url(https://images.unsplash.com/photo-1462206092226-f46025ffe607?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80) !important;
     background-repeat: no-repeat !important;
     background-size: 100% 100%!important;
 }
@@ -349,9 +369,8 @@ i {
 }
         
 
+
     </style>
-    <script type="text/javascript" src="particles.js"></script>
-  <script type="text/javascript" src="app.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
