@@ -4,158 +4,357 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CUstomer Churn Prediction</title>
+    <title>Customer Churn Prediction</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
 
-    <div style="color:blue">
+
+    <!-- Navbar Starts -->
+    <section id="nav-bar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">CSK</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+             <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Net Banking</a>
+             </li>
+             <li class="nav-item">
+                <a class="nav-link" href="#">Predictions</a>
+             </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+             </li>
+             
+        </ul>
+    </div>
+    </nav>
+    </section>
+    <!-- Navbar Ends -->
+    <div id="particles-js"></div>
+    
+    
+        
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Predictive analysis</h2>
-            <h3>Credit Score</h3>
-            <input id="first" name="CreditScore" type="number ">
-            <h3>Age</h3><br><input id="second" name="Age" required="required">
-            <h3>Tenure</h3><input id="third" name="Tenure" required="required">
-            <h3>Balance</h3><br><input id="fourth" name="Balance" required="required">
-            <h3>NumOfProducts</h3><input id="third" name="NumOfProducts" required="required">
-            <h3>HasCrCard</h3><input id="third" name="HasCrCard" required="required">
-            <h3>IsActiveMember</h3><input id="third" name="IsActiveMember" required="required">
-            
-            <h3>EstimatedSalary</h3><input id="third" name="EstimatedSalary" required="required">
-            <h3>Geography_Germany</h3><br><select name="Geography_Germany" id="fuel" required="required">
+	    <h1>Enter the Information Below and find if a Customer will Churn out or not</h1>
+	    
+    <div class="contentform">
+    	<div id="sendmessage"> Your message has been sent successfully. Thank you. </div>
+
+
+    	<div class="leftcontact">
+			      <div class="form-group">
+			        <p>Credit Score<span>*</span></p>
+			        <span class="icon-case"><i class="fa fa-male"></i></span>
+				        <input name="CreditScore"  name="CreditScore" type="number" >
+                <div class="validation"></div>
+       </div> 
+
+            <div class="form-group">
+            <p>Age <span>*</span></p>
+            <span class="icon-case"><i class="fa fa-user"></i></span>
+				<input name="Age" required="required">
+                <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Tenure <span>*</span></p>	
+			<span class="icon-case"><i class="fa fa-envelope-o"></i></span>
+                <input name="Tenure" required="required">
+                <div class="validation"></div>
+			</div>	
+
+			<div class="form-group">
+			<p>Enter the Account Balance:  <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-home"></i></span>
+				<input name="Balance" required="required">
+                <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Number of Products <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-location-arrow"></i></span>
+				<input name="NumOfProducts" required="required">
+                <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Do the Customer have Credit Card? <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-map-marker"></i></span>
+				<input name="HasCrCard" required="required">
+                <div class="validation"></div>
+			</div>	
+
+
+
+	</div>
+
+	<div class="rightcontact">	
+
+			<div class="form-group">
+			<p>Is the Customer Active Member<span>*</span></p>
+			<span class="icon-case"><i class="fa fa-building-o"></i></span>
+				<input name="IsActiveMember" required="required">
+                <div class="validation"></div>
+			</div>	
+
+			<div class="form-group">
+			<p>Enter the Estimated Salary: <span>*</span></p>	
+			<span class="icon-case"><i class="fa fa-phone"></i></span>
+				<input name="EstimatedSalary" required="required">
+                <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Enter The Location: <span>*</span></p>
+			<span class="icon-case"><i class="fa fa-info"></i></span>
+                <select name="Geography_Germany" required="required">
                 <option value="Germany">Germany</option>
                 <option value="Spain">Spain</option>
                 <option value="France">France</option>
             </select>
-            <h3>Gender_Male</h3><br><select name="Gender_Male" id="resea" required="required">
+            <div class="validation"></div>
+			</div>
+
+			<div class="form-group">
+			<p>Gender of Customer:  <span>*</span></p>	
+			<span class="icon-case"><i class="fa fa-comment-o"></i></span>
+                <select name="Gender_Male" id="resea" required="required">
                 <option value="Male">Male</option>
                 <option value="Female">Female</option>
             </select>
-            
-            <br><br><button id="sub" type="submit ">Predict whether the Customer will leave the bank or not?</button>
-            <br>
+                <div class="validation"></div>
+			</div>
+		
+			
+	</div>
+	</div>
+<button  type="submit " class="btn btn-lg btn-info mb-5 ml-5">Predict whether the Customer will leave the bank or not?</button>
+	
+</form>	
+    
+   
+   
 
 
-
-
-        </form>
-
-
-
-        <br><br><h3>{{ prediction_text }}<h3>
+        <br><br><h3 class="alert alert-primary text-center" role="alert">{{ prediction_text }}<h3>
     </div>
 
 
 
 
     <style>
-        body {
-            background-color: lightslategray;
-            text-align: center;
-            padding: 0px;
-        }
+        * {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: sans-serif;
+    background-image: url(https://images.unsplash.com/photo-1480506132288-68f7705954bd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1393&q=80) !important;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100%!important;
+}
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.navbar {
+    background: rgb(0, 81, 255) !important;
+}
+.navbar-nav li {
+    padding: 0 10px;
+}
+.navbar-nav li a {
+    color: #fff !important;
+    font-weight: 600;
+}
+.navbar-toggler {
+    outline: none !important;
+}
+ #banner {
+         background: rgb(0, 81, 255) !important;
+         color: #fff;
+         padding-top: 5%;
+      }
+      .promo-title {
+        font-size: 40px;
+        font-weight: 600;
+        margin-top: 100px;
+      }
+      body {
+  margin: auto;
+  background: #eaeaea;  
+  font-family: 'Open Sans', sans-serif;
+}
+ .info p {
+  text-align:center;
+  color: #999;
+  text-transform:none;
+  font-weight:600;
+  font-size:15px;
+  margin-top:2px
+}
+
+.info i {
+  color:#F6AA93;
+}
+form h1 {
+  font-size: 18px;
+  background:blue none repeat scroll 0% 0%;
+  color: rgb(255, 255, 255);
+  padding: 22px 25px;
+  border-radius: 5px 5px 0px 0px;
+  margin: auto;
+  text-shadow: none; 
+  text-align:left
+}
+
+form {
+  border-radius: 5px;
+  max-width:700px;
+  width:100%;
+  margin: 5% auto;
+  background-color: #FFFFFF;
+  overflow: hidden;
+}
+
+p span {
+  color: #F00;
+}
+
+p {
+  margin: 0px;
+  font-weight: 500;
+  line-height: 2;
+  color:#333;
+}
+
+h1 {
+  text-align:center; 
+  color: #666;
+  text-shadow: 1px 1px 0px #FFF;
+  margin:50px 0px 0px 0px
+}
+
+input {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+  width: 75%;
+  height: 40px;
+  float: left;
+  padding: 0px 15px;
+}
+
+a {
+  text-decoration:inherit
+}
+
+textarea {
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid #EEE;
+  margin: 0;
+  width: 75%;
+  height: 130px; 
+  float: left;
+  padding: 0px 15px;
+}
+
+.form-group {
+  overflow: hidden;
+  clear: both;
+}
+
+.icon-case {
+  width: 35px;
+  float: left;
+  border-radius: 5px 0px 0px 5px;
+  background:#eeeeee;
+  height:42px;
+  position: relative;
+  text-align: center;
+  line-height:40px;
+}
+
+i {
+  color:#555;
+}
+
+.contentform {
+  padding: 40px 30px;
+}
+
+.bouton-contact{
+  background-color: #81BDA4;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  border:0;
+  padding: 17px 25px;
+  border-radius: 0px 0px 5px 5px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-size: 18px;
+}
+
+.leftcontact {
+  width:49.5%; 
+  float:left;
+  border-right: 1px dotted #CCC;
+  box-sizing: border-box;
+  padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+  width:49.5%;
+  float:right;
+  box-sizing: border-box;
+  padding: 0px 0px 0px 15px;
+}
+
+.validation {
+  display:none;
+  margin: 0 0 10px;
+  font-weight:400;
+  font-size:13px;
+  color: #DE5959;
+}
+
+#sendmessage {
+  border:1px solid #fff;
+  display:none;
+  text-align:center;
+  margin:10px 0;
+  font-weight:600;
+  margin-bottom:30px;
+  background-color: #EBF6E0;
+  color: #5F9025;
+  border: 1px solid #B3DC82;
+  padding: 13px 40px 13px 18px;
+  border-radius: 3px;
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+}
+
+#sendmessage.show,.show  {
+  display:block;
+}
         
-        #research {
-            font-size: 18px;
-            width: 100px;
-            height: 23px;
-            top: 23px;
-        }
-        
-        #box {
-            border-radius: 60px;
-            border-color: 45px;
-            border-style: solid;
-            font-family: cursive;
-            text-align: center;
-            background-color: rgb(168, 131, 61);
-            font-size: medium;
-            position: absolute;
-            width: 700px;
-            bottom: 9%;
-            height: 850px;
-            right: 30%;
-            padding: 0px;
-            margin: 0px;
-            font-size: 14px;
-        }
-        
-        #fuel {
-            width: 83px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 20px;
-        }
-        
-        #fuel:hover {
-            background-color: coral;
-        }
-        
-        #research {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #research:hover {
-            background-color: coral;
-        }
-        
-        #resea {
-            width: 99px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #resea:hover {
-            background-color: coral;
-        }
-        
-        #sub {
-            width: 120px;
-            height: 43px;
-            text-align: center;
-            border-radius: 14px;
-            font-size: 18px;
-        }
-        
-        #sub:hover {
-            background-color: darkcyan;
-        }
-        
-        #first {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #second {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #third {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
-        
-        #fourth {
-            border-radius: 14px;
-            height: 25px;
-            font-size: 20px;
-            text-align: center;
-        }
+
     </style>
+    <script type="text/javascript" src="particles.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>
