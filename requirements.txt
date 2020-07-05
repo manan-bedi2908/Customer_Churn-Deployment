@@ -10,8 +10,6 @@ joblib==0.16.0
 jsonify==0.5
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
-mkl-random==1.1.1
-mkl-service==2.3.0
 numpy==1.18.5
 pandas @ file:///C:/ci/pandas_1592841747005/work
 pyparsing==2.4.7
