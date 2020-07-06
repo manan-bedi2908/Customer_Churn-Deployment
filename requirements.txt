@@ -10,18 +10,18 @@ joblib==0.16.0
 jsonify==0.5
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
-matplotlib @ file:///C:/ci/matplotlib-base_1592846084747/work
+matplotlib
 mkl-fft==1.1.0
 mkl-random==1.1.1
 mkl-service==2.3.0
 numpy==1.18.5
-pandas @ file:///C:/ci/pandas_1592841747005/work
+pandas 
 pyparsing==2.4.7
 python-dateutil==2.8.1
 pytz==2020.1
 requests==2.24.0
 scikit-learn==0.23.1
-scipy @ file:///C:/ci/scipy_1592916958183/work
+scipy
 seaborn==0.10.1
 six==1.15.0
 sklearn==0.0
