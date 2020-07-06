@@ -11,6 +11,9 @@ jsonify==0.5
 kiwisolver==1.2.0
 MarkupSafe==1.1.1
 matplotlib
+mkl-fft
+mkl-random
+mkl-service
 numpy==1.18.5
 pandas 
 pyparsing==2.4.7
