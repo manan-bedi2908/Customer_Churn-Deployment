@@ -13,7 +13,7 @@ kiwisolver==1.2.0
 MarkupSafe==1.1.1
 matplotlib 
 mkl
-numpy==1.18.5
+numpy==1.22.0
 pandas 
 pyparsing==2.4.7
 python-dateutil==2.8.1
